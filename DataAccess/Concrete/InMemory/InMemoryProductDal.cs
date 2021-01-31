@@ -49,6 +49,7 @@ namespace DataAccess.Concrete.InMemory
             Product productToDelete = null;
             productToDelete = _products.SingleOrDefault(p=>p.ProductId == product.ProductId); //her p için bak bakalım p'nin product id'si benm parametre olarak yolladığımınkine eşit mi
             //foreachin kısa halini lambda ile yazdık yani
+            _products.Remove(productToDelete);
         }
 
         public List<Product> GetAll()
@@ -60,6 +61,7 @@ namespace DataAccess.Concrete.InMemory
         public List<Product> GetAllByCategory(int categoryId)
         {
             return _products.Where(p => p.CategoryId == categoryId).ToList();
+            //Mesela bu da bir LINQ(Language Integrated Query) kullanım örneği
         }
 
         public void Update(Product product)
