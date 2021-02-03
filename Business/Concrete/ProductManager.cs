@@ -24,6 +24,17 @@ namespace Business.Concrete
             //bi iş sınıfı başka sınıfları newlemez.. constructor injection yapalım o yüzden yani constructor kullanıyorum ki bura çok önemli defalarca tekrar et
             return _iProductDal.GetAll();
         }
+
+        public List<Product> GetAllByCategoryId(int id)
+        {
+
+            return _iProductDal.GetAll(p => p.CategoryId == id);
+        }
+
+        public List<Product> GetByUnitPrice(decimal min, decimal max)
+        {
+            return _iProductDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max);
+        }
     }
 }
 
