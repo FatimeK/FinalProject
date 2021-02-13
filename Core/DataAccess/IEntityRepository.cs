@@ -1,10 +1,11 @@
-﻿using Entities.Abstract;
+﻿
+using Core.Entites;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
     public interface IEntityRepository<T> where T : class,IEntity,new() //burda filtreledim ki adam başka nesne veya klas veremesin implemente ettiğim yerlerde
     {
