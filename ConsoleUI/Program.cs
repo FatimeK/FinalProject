@@ -10,7 +10,7 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             //DTO - Data Transformation Object
-            ProductTest();
+            //ProductTest();
             //CategoryTest();
 
         }
@@ -20,34 +20,34 @@ namespace ConsoleUI
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
             
-            foreach (var category in categoryManager.GetAll())
-            {
-                Console.WriteLine(category.CategoryName);
-            }
+            //foreach (var category in categoryManager.GetAll())
+            //{
+            //    Console.WriteLine(category.CategoryName);
+            //}
         }
 
-        private static void ProductTest()
-        {
-            ProductManager productManager = new ProductManager(new EfProductDal());//bana hangi veri yöntemiyle çalışcamı söylemen lazım
-            var result = productManager.GetAll();
-            if (result.Success == true)
-            {
-                foreach (var prouct in result.Data)
-                {
-                    //Console.WriteLine(prouct.ProductName + "/" + prouct.CategoryName);
+        //private static void ProductTest()
+        //{
+        //    ProductManager productManager = new ProductManager(new EfProductDal());//bana hangi veri yöntemiyle çalışcamı söylemen lazım
+        //    var result = productManager.GetAll();
+        //    if (result.Success == true)
+        //    {
+        //        foreach (var prouct in result.Data)
+        //        {
+        //            //Console.WriteLine(prouct.ProductName + "/" + prouct.CategoryName);
 
-                }
+        //        }
 
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(result.Message);
+        //    }
             
 
 
             
-        }
+        //}
 
     }
 }
